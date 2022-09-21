@@ -40,9 +40,4 @@
 
 @section('script')
 {!! JsValidator::formRequest('App\Http\Requests\AccounttypeRequest', '#create') !!}
-<script>
-    $('.pay-list').on('change', function() {
-        $('.pay-list').not(this).prop('checked', false);
-    });
-</script>
 @endsection

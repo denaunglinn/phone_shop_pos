@@ -1,43 +1,22 @@
 <link rel="stylesheet" href="{{ asset('vendor/assets/css/main.css') }}">
 <link rel="stylesheet" href="{{ asset('vendor/assets/css/lib.css') }}">
 <link rel="stylesheet" href="{{ asset('fonts/vendor/fontawesome/css/all.min.css') }}">
-{{-- <link href='https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.css' rel='stylesheet'> --}}
-<link rel="stylesheet" href="{{asset('assets/dropzone/dropzone.css')}}">
 
 <!-- Datatable -->
-{{-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css"> --}}
 ​<link rel="stylesheet" href="{{asset('assets/dataTable/datatable.css')}}">
-
 <link rel="stylesheet" href="//cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css">
 
-{{-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css"> --}}
 <link rel="stylesheet" href="{{asset('assets/dataTable/button_datatables.css')}}">
-{{-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css"> --}}
 <link rel="stylesheet" href="{{asset('assets/dataTable/button_datatables.css')}}">
-
-{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"> --}}
 
 {{-- Daterange Picker --}}
-{{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" /> --}}
 <link rel="stylesheet" href="{{asset('assets/daterangepicker/daterangepicker.css')}}">
-
-{{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" /> --}}
 <link rel="stylesheet" href="{{asset('assets/select2/select2.css')}}">
-
-{{-- <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.min.css"
-    integrity="sha256-nbyata2PJRjImhByQzik2ot6gSHSU4Cqdz5bNYL2zcU=" crossorigin="anonymous" /> --}}
 <link rel="stylesheet" href="{{asset('assets/select2/select2_bootstrap.css')}}" integrity="sha256-nbyata2PJRjImhByQzik2ot6gSHSU4Cqdz5bNYL2zcU=" crossorigin="anonymous" />
-
-{{-- <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.min.css"
-    integrity="sha256-Eff0vTAskMNGMXDva8NMruf8ex6k9EuZ4QXf09lxwaQ=" crossorigin="anonymous" /> --}}
 <link rel="stylesheet" href="{{asset('assets/scrollbar/scrollbar.css')}}" integrity="sha256-Eff0vTAskMNGMXDva8NMruf8ex6k9EuZ4QXf09lxwaQ=" crossorigin="anonymous" />
 
 
 {{-- Image Viewer --}}
-{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.3.6/viewer.css"> --}}
 <link rel="stylesheet" href="{{asset('assets/imageviewer/viewer.css')}}">
 
 <style>

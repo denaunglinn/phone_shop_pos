@@ -1,7 +1,7 @@
-<script>
+{{-- <script>
     var PREFIX_URL = '{{config("app.prefix_admin_url")}}';
     var CSRF_TOKEN = '{{csrf_token()}}';
-</script>
+</script> --}}
 
 {{-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> --}}
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>

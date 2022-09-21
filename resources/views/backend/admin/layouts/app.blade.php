@@ -27,30 +27,15 @@
     @elseif(App()->isLocale('mm_uni'))
     <link href="{{asset('assets/css/lang_mm_uni.css')}}" rel="stylesheet">
     @endif
-
     
     @include('backend.admin.layouts.assets.css')
-
     @yield('extra_css')
     <style>
         .ps__thumb-y{
             background-color:rgb(136, 129, 129) !important;
             width:15px !important;
         }
-    </style>
-
-    {{-- Recaptcha --}}
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158063920-3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-158063920-3');
-    </script>
+    </style>  
 </head>
 
 <body>
@@ -62,7 +47,6 @@
             <div class="app-main__outer">
                 <div class="app-main__inner">
                     @include('backend.admin.layouts.components.page_title')
-
                     <div class="py-3">
                         <div class="d-inline-block">
                             <button class="previous-btn btn btn-dark"> <i class="fas fa-arrow-circle-left"></i>
@@ -81,12 +65,6 @@
     @include('menu_search.menu_search_script')
     @include('backend.admin.layouts.assets.js')
     <script>
-      
-        // $('#searchModal').on('click', function(e) {
-        //     $('#input').val('');
-        //     $("#menu-search-result-list").html('');
-        //     $("#menu-search-result-container").attr('hidden', true);
-        // });
 
         $('#searchModal').on('show', function () {
           $(this).find('.menu-search-input').focus();

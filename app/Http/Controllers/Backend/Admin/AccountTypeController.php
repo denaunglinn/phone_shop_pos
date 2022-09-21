@@ -61,6 +61,7 @@ class AccountTypeController extends Controller
         if (!$this->getCurrentAuthUser('admin')->can('add_account_type')) {
             abort(404);
         }
+        
         return view(('backend.admin.accounttypes.create'));
     }
 

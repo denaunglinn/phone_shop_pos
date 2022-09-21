@@ -77,11 +77,11 @@
                                 <h4 >@lang("message.header.item")</h4>
                             </div>
                             <div class="col-md-3 mb-3 text-right">
-                                <select name="search_category" id=""  class="form-control from-control-sm" style="font-size: 12px">
+                                <select name="search_category"   class="item_category form-control from-control-sm" style="font-size: 12px">
                                     <option value="" holder>@lang("message.header.filter_category")</option>
-                                    @foreach($item_category as $data)
-                                        <option value="{{$data->id}}">{{$data->name}}</option>
-                                    @endforeach 
+                                    @if($selected_item_category)
+                                        <option value="{{$selected_item_category->id}}" selected>{{$selected_item_category->name}}</option>
+                                    @endif 
                                 </select>
                             </div>
                             <div class="col-md-3 mb-3"><input type="text" name="search_item"
@@ -146,12 +146,10 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <form action="{{ url('admin/transcation') }}" method="get">
-                            <select name="customer" class="form-control" id="customer"  onchange="this.form.submit()">
+                            <select name="customer" class="form-control customer" id="customer"  onchange="this.form.submit()">
                                 <option value="0">Default Customer</option>
-                                @forelse($customer as $data)
-                                <option @if(request()->customer ? request()->customer == $data->id : 0) selected @endif value="{{$data->id}}">{{$data->name}} / {{$data->phone}} / {{$data->address}} </option>
-                                @empty
-                                <option value="0">No Customer Data</option>
+                                @if($selected_customer)
+                                <option value="{{$selected_customer->id}}" selected>{{$selected_customer->name}} ({{$selected_customer->phone}})</option>
                                 @endif
                             </select></form>
                         </div>
@@ -286,6 +284,65 @@
 @endsection
 @section('script')
 <script>
+    $(document).ready(function() {
+        $('.item_category').select2({
+                placeholder: 'All',
+                allowClear: true,
+                theme: 'bootstrap',
+                ajax: {
+                    url: '/admin/data/item-categories',
+                    type: "post",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function(params) {
+                        return {
+                            search: params.term || "",
+                            page: params.page || 1,
+                        }
+                    },
+                    processResults: function (res) {
+                        return {
+                            results:  $.map(res['results'], function (item) {
+                                return {
+                                    text: item.name,
+                                    id: item.id
+                                }
+                            })
+                        }
+                    },
+                    cache: true
+                }
+        });
+
+        $('.customer').select2({
+                placeholder: 'Default Customer',
+                allowClear: true,
+                theme: 'bootstrap',
+                ajax: {
+                    url: '/admin/data/customers',
+                    type: "post",
+                    dataType: 'json',
+                    delay: 250,
+                    data: function(params) {
+                        return {
+                            search: params.term || "",
+                            page: params.page || 1,
+                        }
+                    },
+                    processResults: function (res) {
+                        return {
+                            results:  $.map(res['results'], function (item) {
+                                return {
+                                    text: item.name + ' ('+item.phone+')',
+                                    id: item.id
+                                }
+                            })
+                        }
+                    },
+                    cache: true
+                }
+        });
+    });
 
     function cek(bayar, jumlah) {
         const saveButton = document.getElementById("saveButton");   
